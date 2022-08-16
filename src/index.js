@@ -13,6 +13,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
+
       <Route
         index
         element={
@@ -27,9 +28,8 @@ root.render(
             consequat quam.</p>
           </>
         }
-      />
+      />      
         <Route path="dates" element={<Dates />}>
-          
         <Route
         index
         element={
@@ -43,12 +43,20 @@ root.render(
             interdum, nibh elit congue tellus, ac vulputate urna lorem nec nisi. Morbi id 
             consequat quam.</p>
           </>
-            
-
         }
-      />
-        <Route path=":dateId" element={<Date />} />
+      />     
+        <Route path=":dateId" element={<Date />} />        
       </Route>
+
+      <Route
+      path="*"
+      element={
+        <main style={{ padding: "1rem" }}>
+          <p>There's nothing here!</p>
+        </main>
+      }
+    />
+
       </Route>
     </Routes>
   </BrowserRouter>

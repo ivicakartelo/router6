@@ -1,10 +1,23 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useSearchParams } from "react-router-dom";
 import { getDates } from "../database";
 
 export default function Dates() {
-  let dates = getDates();
+  const dates = getDates();
+  const [searchParams, setSearchParams] = useSearchParams();
   return (
-    <div>
+    <>
+      <div>
+      <input
+          value={searchParams.get("filter") || ""}
+          onChange={(event) => {
+            let filter = event.target.value;
+            if (filter) {
+              setSearchParams({ filter });
+            } else {
+              setSearchParams({});
+            }
+          }}
+        />
         {dates.map((date) => (
           <NavLink
           style={({ isActive }) => {
@@ -21,7 +34,11 @@ export default function Dates() {
             <h3>{date.title}</h3>
           </NavLink>
         ))}
+      </div>
+      
         <Outlet />
-    </div>
+      
+        
+      </>
   );
 }
