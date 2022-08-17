@@ -6,7 +6,6 @@ export default function Dates() {
   const [searchParams, setSearchParams] = useSearchParams();
   return (
     <>
-      <div>
       <input
           value={searchParams.get("filter") || ""}
           onChange={(event) => {
@@ -18,7 +17,16 @@ export default function Dates() {
             }
           }}
         />
-        {dates.map((date) => (
+
+{dates
+          .filter((date) => {
+            const filter = searchParams.get("filter");
+            if (!filter) return true;
+            const title = date.title.toLowerCase();
+            return title.startsWith(filter.toLowerCase());
+          })
+
+        .map((date) => (
           <NavLink
           style={({ isActive }) => {
             return {
@@ -33,12 +41,8 @@ export default function Dates() {
           >
             <h3>{date.title}</h3>
           </NavLink>
-        ))}
-      </div>
-      
+        ))}      
         <Outlet />
-      
-        
       </>
   );
 }

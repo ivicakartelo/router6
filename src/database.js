@@ -1,7 +1,7 @@
 const dates = [
     {
       id: 1,
-      title: 'On August 11, 2022, React Router 6',
+      title: 'August 11, 2022, React Router 6',
       text: [
         `Vel eleifend ex egestas. Sed in turpis leo. Aliquam malesuada in massa tincidunt egestas. Nam consectetur varius turpis, 
         non porta arcu porttitor non. In tincidunt vulputate nulla quis egestas. Ut 
@@ -23,7 +23,7 @@ const dates = [
     },
     {
         id: 2,
-        title: 'On August 17, 2022, NavLink',
+        title: 'July 17, 2022, NavLink',
         text: [
             `Turpis leo. Aliquam malesuada in massa tincidunt egestas. Nam consectetur varius turpis, 
             non porta arcu porttitor non. In tincidunt vulputate nulla quis egestas. Ut 
@@ -45,7 +45,7 @@ const dates = [
     },
     {
         id: 3,
-        title: 'On August 21, 2022, parseInt()',
+        title: 'June 21, 2022, parseInt()',
         text: [
             `In tincidunt vulputate nulla quis egestas. Ut 
             eleifend ut ipsum non fringilla. Praesent imperdiet nulla nec est luctus, at 
